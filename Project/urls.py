@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import TravelAPIView
+from main.views import TravelAPIView, CarrierAPIView, HotelAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/news/', TravelAPIView.as_view()),
     path('api/v1/news/<int:pk>/', TravelAPIView.as_view()),
+    path('api/v1/carriers/', CarrierAPIView.as_view()),
+    path('api/v1/hotel/', HotelAPIView.as_view()),
+    path('api/v1/hotel/<int:pk>', HotelAPIView.as_view()),
+    path('api/v1/carriers/<int:pk>', CarrierAPIView.as_view()),
+
 ]
